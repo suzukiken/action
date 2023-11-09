@@ -12,7 +12,7 @@ jobs:
       - run: touch ${{ env.NOW }}.txt
       - run: git add .
       - run: git commit -m'update'
-      #- run: git push origin -d dev
+      - run: git push origin -d dev
       - run: git push origin dev
 
 
