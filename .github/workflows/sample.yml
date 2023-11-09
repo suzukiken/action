@@ -5,6 +5,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: git config --global user.email "suzukiken@gmail.com"
+      - run: git config --global user.name "suzukiken"
       - run: git checkout -b dev
       - run: echo "NOW=$(date)" >> $GITHUB_ENV
       - run: touch ${{ env.NOW }}.txt
