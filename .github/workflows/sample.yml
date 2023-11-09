@@ -5,4 +5,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - run: git checkout dev
+      - run: touch a.txt
+      - run: git add .
+      - run: git commit -m'update'
+      - run: git push origin dev
+      
 
