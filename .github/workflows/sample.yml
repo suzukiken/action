@@ -7,15 +7,18 @@ jobs:
   Process:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
       - run: git config --global user.email "suzukiken@gmail.com"
       - run: git config --global user.name "github-actions[bot]"
+      - uses: actions/checkout@v4
+        with:
+          ref: dev
+      - run: git branch -m dev prev
+      - run: git push origin prev
+      - run: git push origin -d dev
       - run: git checkout -b dev
       - run: echo "NOW=$(date)" >> $GITHUB_ENV
       - run: touch ${{ env.NOW }}.txt
       - run: git add .
       - run: git commit -m'update'
-      - run: git push origin -d dev
       - run: git push origin dev
-
 
