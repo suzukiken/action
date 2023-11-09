@@ -13,6 +13,7 @@ jobs:
         with:
           ref: dev
       - run: git branch -m dev prev
+      - run: git push origin -d prev
       - run: git push origin prev
       - run: git push origin -d dev
       - run: git checkout -b dev
