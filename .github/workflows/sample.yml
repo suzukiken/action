@@ -1,8 +1,8 @@
 name: GitHub Actions Demo
-#on: workflow_dispatch
-on:
-  schedule:
-    - cron: '*/2 * * * *'
+on: workflow_dispatch
+#on:
+#  schedule:
+#    - cron: '*/2 * * * *'
 jobs:
   Process:
     runs-on: ubuntu-latest
